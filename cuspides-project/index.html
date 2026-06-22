@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cúspides — Academia de Montaña Patagónica</title>
+<meta name="description" content="Formación, entrenamiento y expediciones para quienes buscan desenvolverse en ambientes extremos de la Patagonia."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<nav class="nav-mob" id="navMob" aria-label="Menú móvil">
+  <button class="close-btn mono" onclick="toggleNav(false)" aria-label="Cerrar menú">✕ CERRAR</button>
+  <a href="#territorio" onclick="toggleNav(false)">Territorio</a>
+  <a href="#metodo" onclick="toggleNav(false)">Método</a>
+  <a href="#formacion" onclick="toggleNav(false)">Cursos</a>
+  <a href="#expediciones" onclick="toggleNav(false)">Expediciones</a>
+  <a href="#seguridad" onclick="toggleNav(false)">Seguridad</a>
+  <a href="#equipo" onclick="toggleNav(false)">Equipo</a>
+  <a href="#escuela" onclick="toggleNav(false)" style="color:var(--orange)">Escuela de Guías</a>
+  <a href="#cta" class="btn-primary" onclick="toggleNav(false)" style="margin-top:.5rem">Postularse</a>
+</nav>
+
+<!-- NAV -->
+<header class="nav" id="mainNav" role="banner">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">CÚSPIDES<span>.</span></a>
+      <nav class="nav__links" aria-label="Navegación">
+        <a href="#metodo">Método</a>
+        <a href="#formacion">Cursos</a>
+        <a href="#expediciones">Expediciones</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#escuela">Escuela de Guías</a>
+        <a href="#cta" class="nav__cta">Postulate</a>
+      </nav>
+      <button class="nav__burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero" aria-label="Portada">
+ <img id="heroImg" class="hero__img"
+  src="./img/hero01.png"
+  alt="Cordillera patagónica con picos nevados"
+  loading="eager"/>
+  <svg class="hero__topo" id="heroTopo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M-100,720 C80,695 220,660 400,638 S680,615 860,590 S1060,555 1250,520 S1400,488 1560,470"/>
+    <path d="M-100,760 C60,728 210,688 420,665 S710,640 920,612 S1120,572 1310,538 S1440,505 1600,488"/>
+    <path d="M-100,690 C100,665 260,625 460,600 S750,570 960,542 S1170,504 1370,465 S1480,435 1620,415"/>
+    <path d="M-100,640 C130,612 300,568 520,540 S820,505 1040,470 S1240,425 1440,388 S1550,358 1660,338"/>
+    <path d="M-100,590 C160,560 340,510 580,478 S890,440 1120,400 S1320,348 1520,308 S1620,278 1720,258"/>
+    <path d="M-100,540 C190,508 380,452 640,416 S960,375 1200,330 S1400,272 1600,228 S1690,195 1780,175"/>
+  </svg>
+  <div class="hero__vignette" aria-hidden="true"></div>
+  <div class="hero__coords">
+    <div><span class="dot" aria-hidden="true"></span>PATAGONIA — ARGENTINA</div>
+    <div>LAT 41°21'16" S</div><div>LON 71°31'58" W</div>
+    <div style="margin-top:.4rem;color:var(--orange)">ALT 3.491 M</div>
+  </div>
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__pre">Academia de Montaña Patagónica</p>
+      <h1 class="hero__h1">Patagonia<br/>Extrema</h1>
+      <p class="hero__sub">Formación, entrenamiento y expediciones para quienes buscan desenvolverse en ambientes extremos.</p>
+      <div class="hero__actions">
+        <a href="#territorio" class="btn-primary">
+          Comenzá tu preparación
+          <svg width="15" height="15" fill="none" viewBox="0 0 15 15" aria-hidden="true"><path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__stats" aria-label="Datos de la academia">
+    <div class="hero__stat"><span class="hero__stat-val mono" id="cStat1">0+</span><span class="hero__stat-lbl">Expediciones</span></div>
+    <div class="hero__stat"><span class="hero__stat-val mono" id="cStat2">0</span><span class="hero__stat-lbl">Instructores</span></div>
+    <div class="hero__stat"><span class="hero__stat-val mono" id="cStat3">0%</span><span class="hero__stat-lbl">Tasa de seguridad</span></div>
+  </div>
+</section>
+
+<!-- ── TERRITORIO ────────────────────────────────────── -->
+<section class="territorio band" id="territorio" aria-labelledby="h-territorio">
+  <div class="container">
+    <div class="territorio__top">
+      <p class="eyebrow reveal" id="h-territorio">El Territorio No Perdona</p>
+      <h2 class="territorio__title reveal d1">La Patagonia es un entorno extremo e impredecible.</h2>
+      <p class="territorio__copy reveal d2">Condiciones que exigen preparación, conocimiento y respeto. La montaña no negocia con la improvisación.</p>
+    </div>
+    <div class="stat-grid reveal" role="list">
+      <div class="stat-cell" role="listitem">
+        <svg class="stat-icon" width="32" height="32" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M16 4C16 4 8 10 8 18a8 8 0 0016 0C24 10 16 4 16 4Z"/><path d="M16 22v4M12 26h8" stroke-linecap="round"/></svg>
+        <div><div class="stat-val">120 km/h</div><div class="stat-lbl">Vientos<br/>sostenidos</div></div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <svg class="stat-icon" width="32" height="32" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="13" y="4" width="6" height="16" rx="3"/><circle cx="16" cy="23" r="4"/><line x1="21" y1="10" x2="24" y2="10"/><line x1="21" y1="14" x2="24" y2="14"/></svg>
+        <div><div class="stat-val">−15°C</div><div class="stat-lbl">Temperaturas<br/>extremas</div></div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <svg class="stat-icon" width="32" height="32" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 24L10 14l6 4 6-10 6 4"/><path d="M4 28h24" stroke-linecap="round"/></svg>
+        <div><div class="stat-val">3000 m+</div><div class="stat-lbl">Altitud<br/>promedio</div></div>
+      </div>
+      <div class="stat-cell" role="listitem">
+        <svg class="stat-icon" width="32" height="32" fill="none" viewBox="0 0 32 32" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 26L12 10l6 10 6-14"/><circle cx="24" cy="6" r="2" fill="currentColor" stroke="none"/><path d="M4 26h24" stroke-linecap="round"/></svg>
+        <div><div class="stat-val">2000 m+</div><div class="stat-lbl">Desnivel<br/>acumulado</div></div>
+      </div>
+    </div>
+    <div class="territorio__banner reveal d2">
+      <span>No llevamos personas a la montaña.<br/><span class="banner-accent">Las preparamos para que puedan enfrentarla.</span></span>
+      <small>CÚSPIDES — ACADEMIA DE MONTAÑA</small>
+    </div>
+  </div>
+</section>
+
+<!-- ── MÉTODO ────────────────────────────────────────── -->
+<section class="metodo" id="metodo" aria-labelledby="h-metodo">
+  <div class="container">
+    <div class="metodo__intro">
+      <div>
+        <p class="eyebrow reveal">Método Cúspides</p>
+        <h2 class="metodo__title reveal d1" id="h-metodo">El camino a la cumbre empieza en tierra firme.</h2>
+      </div>
+      <p class="metodo__desc reveal d2">Sistema progresivo de cinco fases. Cada etapa es prerequisito de la siguiente. Sin atajos.</p>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step reveal"><span class="step__num">01</span><div class="step__ring" aria-hidden="true"><span class="step__num-circle">01</span></div><div><h3 class="step__name">Evaluación</h3><p class="step__desc">Diagnóstico físico, psicológico y técnico. Base para el plan personalizado.</p></div></li>
+      <li class="step reveal d1"><span class="step__num">02</span><div class="step__ring" aria-hidden="true"><span class="step__num-circle">02</span></div><div><h3 class="step__name">Entrenamiento</h3><p class="step__desc">Planificación física y mental para resistencia en altura y terreno técnico.</p></div></li>
+      <li class="step reveal d2"><span class="step__num">03</span><div class="step__ring" aria-hidden="true"><span class="step__num-circle">03</span></div><div><h3 class="step__name">Capacitación</h3><p class="step__desc">Módulos técnicos: navegación, primeros auxilios y progresión en montaña.</p></div></li>
+      <li class="step reveal d3"><span class="step__num">04</span><div class="step__ring" aria-hidden="true"><span class="step__num-circle">04</span></div><div><h3 class="step__name">Simulación</h3><p class="step__desc">Escenarios reales en terreno para decidir bajo presión y condiciones adversas.</p></div></li>
+      <li class="step reveal d4"><span class="step__num">05</span><div class="step__ring" aria-hidden="true"><span class="step__num-circle">05</span></div><div><h3 class="step__name">Expedición</h3><p class="step__desc">Aplicación de todo lo aprendido. Guía profesional. Protocolos activos.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ── FORMACIÓN — CARRUSEL ──────────────────────────── -->
+<section class="formacion band" id="formacion" aria-labelledby="h-formacion">
+  <div class="container">
+    <div class="formacion__header">
+      <p class="eyebrow reveal">Módulos de Formación</p>
+      <h2 class="formacion__title reveal d1" id="h-formacion">El conocimiento técnico no es un diferencial. Es el mínimo indispensable.</h2>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="modTrack">
+
+        <article class="module" role="listitem">
+          <img class="module__img" src="./img/navegacionyorientacion01.png" alt="Brújula y mapa topográfico" loading="lazy"/>
+          <div class="module__overlay" aria-hidden="true"></div>
+          <div class="module__body">
+            <div class="module__code">MÓDULO 01</div>
+            <h3 class="module__title">Navegación y Orientación</h3>
+            <p class="module__desc">Lectura de mapas topográficos, uso de brújula y GPS, orientación sin instrumentos y planificación en terrenos sin señal.</p>
+            <div class="module__tags"><span class="module__tag">Cartografía</span><span class="module__tag">GPS / Brújula</span><span class="module__tag">Altimetría</span><span class="module__tag">Triangulación</span></div>
+          </div>
+        </article>
+
+        <article class="module" role="listitem">
+          <img class="module__img" src="./img/primerosauxilios01.png" alt="Primeros auxilios en montaña" loading="lazy"/>
+          <div class="module__overlay" aria-hidden="true"></div>
+          <div class="module__body">
+            <div class="module__code">MÓDULO 02</div>
+            <h3 class="module__title">Primeros Auxilios en Ambientes Agrestes</h3>
+            <p class="module__desc">Hipotermia, fracturas, evacuaciones de emergencia y triage en condiciones extremas sin acceso médico.</p>
+            <div class="module__tags"><span class="module__tag">Hipotermia</span><span class="module__tag">Triage</span><span class="module__tag">Evacuación</span><span class="module__tag">WFA / WAFA</span></div>
+          </div>
+        </article>
+
+        <article class="module" role="listitem">
+          <img class="module__img" src="./img/tecnicas de progresion01.png" alt="Progresión técnica en montaña" loading="lazy"/>
+          <div class="module__overlay" aria-hidden="true"></div>
+          <div class="module__body">
+            <div class="module__code">MÓDULO 03</div>
+            <h3 class="module__title">Progresión Técnica en Montaña</h3>
+            <p class="module__desc">Glaciares, crampones, piolet, anclajes en nieve y roca, rappel, progresión en cordada y gestión de aludes.</p>
+            <div class="module__tags"><span class="module__tag">Glaciar</span><span class="module__tag">Crampones</span><span class="module__tag">Piolet</span><span class="module__tag">Rappel</span></div>
+          </div>
+        </article>
+
+        <article class="module" role="listitem">
+          <img class="module__img" src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=800&q=80&auto=format&fit=crop" alt="Acampada y bivouac de alta montaña" loading="lazy"/>
+          <div class="module__overlay" aria-hidden="true"></div>
+          <div class="module__body">
+            <div class="module__code">MÓDULO 04</div>
+            <h3 class="module__title">Bivouac y Supervivencia</h3>
+            <p class="module__desc">Técnicas de campamento en alta montaña, manejo del frío extremo, hidratación, alimentación y descanso en condiciones adversas.</p>
+            <div class="module__tags"><span class="module__tag">Bivouac</span><span class="module__tag">Nutrición</span><span class="module__tag">Frío extremo</span><span class="module__tag">Refugios</span></div>
+          </div>
+        </article>
+
+        <article class="module" role="listitem">
+          <img class="module__img" src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=80&auto=format&fit=crop" alt="Meteorología en montaña" loading="lazy"/>
+          <div class="module__overlay" aria-hidden="true"></div>
+          <div class="module__body">
+            <div class="module__code">MÓDULO 05</div>
+            <h3 class="module__title">Meteorología de Montaña</h3>
+            <p class="module__desc">Lectura de frentes, interpretación de partes meteorológicos, ventanas de tiempo, toma de decisión con información incompleta.</p>
+            <div class="module__tags"><span class="module__tag">Frentes</span><span class="module__tag">Viento</span><span class="module__tag">Pronóstico</span><span class="module__tag">Decisión</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <div class="carousel-dots" id="modDots" role="tablist" aria-label="Módulos"></div>
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="modPrev" aria-label="Módulo anterior"><svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel-btn" id="modNext" aria-label="Módulo siguiente"><svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTE STRIP ───────────────────────────────────── -->
+<div class="quote-strip">
+  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1800&q=80&auto=format&fit=crop" alt="" loading="lazy" aria-hidden="true"/>
+  <div class="quote-strip__ov" aria-hidden="true"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <blockquote class="quote-strip__text reveal">
+      <span class="quote-strip__mark" aria-hidden="true">"</span>
+      En la montaña no hay segunda oportunidad para quien no estuvo preparado.
+    </blockquote>
+    <p class="quote-strip__attr reveal d1">PROTOCOLO DE SEGURIDAD — CÚSPIDES</p>
+  </div>
+</div>
+
+<!-- ── EXPEDICIONES — CARRUSEL ───────────────────────── -->
+<section class="expediciones" id="expediciones" aria-labelledby="h-expediciones">
+  <div class="container">
+    <div class="expediciones__header">
+      <div>
+        <p class="eyebrow reveal">Expediciones de Alta Exigencia</p>
+        <h2 class="expediciones__title reveal d1" id="h-expediciones">Destinos que exigen preparación real.</h2>
+      </div>
+      <p class="expediciones__sub reveal d2">No son paquetes. Son expediciones técnicas con requisitos de formación y selección por aptitud.</p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="expTrack">
+
+        <article class="expedi-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80&auto=format&fit=crop" alt="Cerro Tronador" loading="lazy"/>
+          <div class="expedi-card__overlay" aria-hidden="true"></div>
+          <div class="expedi-card__body">
+            <div class="expedi-card__difficulty"><span class="expedi-card__level">NIVEL IV</span><div class="lvl-pips" aria-label="4 de 5"><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip"></span></div></div>
+            <h3 class="expedi-card__name">Cerro<br/>Tronador</h3>
+            <div class="expedi-card__meta"><div class="expedi-meta"><strong>3.491 m</strong>Altitud</div><div class="expedi-meta"><strong>7 días</strong>Duración</div><div class="expedi-meta"><strong>Alta exigencia</strong>Clase</div></div>
+            <div class="expedi-card__reqs"><span class="expedi-req">Módulos 1–3 completados</span><span class="expedi-req">Evaluación física aprobada</span><span class="expedi-req">Equipo de glaciar obligatorio</span></div>
+          </div>
+        </article>
+
+        <article class="expedi-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1519120944692-1a8d8cfc107f?w=800&q=80&auto=format&fit=crop" alt="Volcán Lanín" loading="lazy"/>
+          <div class="expedi-card__overlay" aria-hidden="true"></div>
+          <div class="expedi-card__body">
+            <div class="expedi-card__difficulty"><span class="expedi-card__level">NIVEL III</span><div class="lvl-pips"><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip"></span><span class="lvl-pip"></span></div></div>
+            <h3 class="expedi-card__name">Volcán<br/>Lanín</h3>
+            <div class="expedi-card__meta"><div class="expedi-meta"><strong>3.776 m</strong>Altitud</div><div class="expedi-meta"><strong>5 días</strong>Duración</div><div class="expedi-meta"><strong>Técnica media</strong>Clase</div></div>
+            <div class="expedi-card__reqs"><span class="expedi-req">Método Cúspides completo</span><span class="expedi-req">Certificación primeros auxilios</span><span class="expedi-req">Simulación aprobada</span></div>
+          </div>
+        </article>
+
+        <article class="expedi-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80&auto=format&fit=crop" alt="Fitz Roy" loading="lazy"/>
+          <div class="expedi-card__overlay" aria-hidden="true"></div>
+          <div class="expedi-card__body">
+            <div class="expedi-card__difficulty"><span class="expedi-card__level">NIVEL V</span><div class="lvl-pips"><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span></div></div>
+            <h3 class="expedi-card__name">Fitz<br/>Roy</h3>
+            <div class="expedi-card__meta"><div class="expedi-meta"><strong>3.405 m</strong>Altitud</div><div class="expedi-meta"><strong>14 días</strong>Duración</div><div class="expedi-meta"><strong>Elite</strong>Clase</div></div>
+            <div class="expedi-card__reqs"><span class="expedi-req">Dos expediciones previas certificadas</span><span class="expedi-req">Aptitud técnica nivel avanzado</span><span class="expedi-req">Selección por comité</span></div>
+          </div>
+        </article>
+
+        <article class="expedi-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop" alt="Torres del Paine" loading="lazy"/>
+          <div class="expedi-card__overlay" aria-hidden="true"></div>
+          <div class="expedi-card__body">
+            <div class="expedi-card__difficulty"><span class="expedi-card__level">NIVEL III</span><div class="lvl-pips"><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip"></span><span class="lvl-pip"></span></div></div>
+            <h3 class="expedi-card__name">Torres<br/>del Paine</h3>
+            <div class="expedi-card__meta"><div class="expedi-meta"><strong>2.884 m</strong>Altitud</div><div class="expedi-meta"><strong>10 días</strong>Duración</div><div class="expedi-meta"><strong>Alta exigencia</strong>Clase</div></div>
+            <div class="expedi-card__reqs"><span class="expedi-req">Módulos 1–4 completados</span><span class="expedi-req">Resistencia cardiovascular alta</span><span class="expedi-req">Equipo para viento extremo</span></div>
+          </div>
+        </article>
+
+        <article class="expedi-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?w=800&q=80&auto=format&fit=crop" alt="Volcán Copahue" loading="lazy"/>
+          <div class="expedi-card__overlay" aria-hidden="true"></div>
+          <div class="expedi-card__body">
+            <div class="expedi-card__difficulty"><span class="expedi-card__level">NIVEL III</span><div class="lvl-pips"><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip"></span><span class="lvl-pip"></span></div></div>
+            <h3 class="expedi-card__name">Volcán<br/>Copahue</h3>
+            <div class="expedi-card__meta"><div class="expedi-meta"><strong>2.965 m</strong>Altitud</div><div class="expedi-meta"><strong>4 días</strong>Duración</div><div class="expedi-meta"><strong>Volcánica</strong>Clase</div></div>
+            <div class="expedi-card__reqs"><span class="expedi-req">Módulos 1–3 completados</span><span class="expedi-req">Protocolo volcánico activado</span><span class="expedi-req">Certificación gases toxicos</span></div>
+          </div>
+        </article>
+
+        <article class="expedi-card" role="listitem">
+          <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&q=80&auto=format&fit=crop" alt="Cerro San Valentín" loading="lazy"/>
+          <div class="expedi-card__overlay" aria-hidden="true"></div>
+          <div class="expedi-card__body">
+            <div class="expedi-card__difficulty"><span class="expedi-card__level">NIVEL IV</span><div class="lvl-pips"><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip on"></span><span class="lvl-pip"></span></div></div>
+            <h3 class="expedi-card__name">Cerro San<br/>Valentín</h3>
+            <div class="expedi-card__meta"><div class="expedi-meta"><strong>4.058 m</strong>Altitud</div><div class="expedi-meta"><strong>12 días</strong>Duración</div><div class="expedi-meta"><strong>Cima Patagónica</strong>Clase</div></div>
+            <div class="expedi-card__reqs"><span class="expedi-req">Tres expediciones previas</span><span class="expedi-req">Todos los módulos aprobados</span><span class="expedi-req">Equipamiento de alta montaña</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <div class="carousel-dots" id="expDots" role="tablist" aria-label="Expediciones"></div>
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="expPrev" aria-label="Anterior"><svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel-btn" id="expNext" aria-label="Siguiente"><svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SEGURIDAD ─────────────────────────────────────── -->
+<section class="seguridad band" id="seguridad" aria-labelledby="h-seguridad">
+  <div class="container">
+    <div class="seguridad__header">
+      <div>
+        <p class="eyebrow reveal">Seguridad y Protocolos</p>
+        <h2 class="seg-title reveal d1" id="h-seguridad">La seguridad no es opcional.</h2>
+      </div>
+      <p class="seg-copy reveal d2">Cada expedición opera bajo protocolos de gestión de riesgo, comunicación satelital y procedimientos coordinados con Defensa Civil.</p>
+    </div>
+    <div class="seg-grid reveal" role="list">
+      <div class="seg-cell" role="listitem">
+        <svg class="seg-cell__icon" width="28" height="28" fill="none" viewBox="0 0 28 28" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 2L4 7v7c0 6 4.5 10.5 10 12 5.5-1.5 10-6 10-12V7Z"/><path d="M10 14l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="seg-cell__title">Equipamiento</div>
+        <div class="seg-cell__text">Revisión técnica obligatoria pre-expedición. Lista homologada de equipo personal y colectivo de rescate.</div>
+      </div>
+      <div class="seg-cell" role="listitem">
+        <svg class="seg-cell__icon" width="28" height="28" fill="none" viewBox="0 0 28 28" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 3.5L2.5 21a2.5 2.5 0 002.1 3.5H23.4a2.5 2.5 0 002.1-3.5L16 3.5a2.5 2.5 0 00-4 0z"/><line x1="14" y1="10" x2="14" y2="16"/><circle cx="14" cy="20" r="1" fill="currentColor" stroke="none"/></svg>
+        <div class="seg-cell__title">Gestión de Riesgo</div>
+        <div class="seg-cell__text">Evaluación continua de condiciones meteorológicas, terreno y capacidad grupal. Protocolo de retorno automático.</div>
+      </div>
+      <div class="seg-cell" role="listitem">
+        <svg class="seg-cell__icon" width="28" height="28" fill="none" viewBox="0 0 28 28" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="8" width="22" height="16" rx="2"/><path d="M18 8V6a4 4 0 00-8 0v2"/><line x1="14" y1="14" x2="14" y2="18"/><line x1="12" y1="16" x2="16" y2="16"/></svg>
+        <div class="seg-cell__title">Comunicaciones</div>
+        <div class="seg-cell__text">Radio VHF, GPS satelital Garmin inReach y EPIRB activo. Reporte cada 4 horas. Silencio = rescate automático.</div>
+      </div>
+      <div class="seg-cell" role="listitem">
+        <svg class="seg-cell__icon" width="28" height="28" fill="none" viewBox="0 0 28 28" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M14 8v6l4 2" stroke-linecap="round"/></svg>
+        <div class="seg-cell__title">Punto de No Retorno</div>
+        <div class="seg-cell__text">Definido antes de cada ascenso. La cumbre es opcional. La bajada segura, no.</div>
+      </div>
+      <div class="seg-cell" role="listitem">
+        <svg class="seg-cell__icon" width="28" height="28" fill="none" viewBox="0 0 28 28" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M14 3v8M10 7l4-4 4 4"/><rect x="4" y="14" width="20" height="11" rx="1"/><line x1="9" y1="14" x2="9" y2="25"/><line x1="14" y1="14" x2="14" y2="25"/><line x1="19" y1="14" x2="19" y2="25"/></svg>
+        <div class="seg-cell__title">Rescate Técnico</div>
+        <div class="seg-cell__text">Camilla de montaña, sistema de poleas y bivouac de emergencia en cada expedición técnica.</div>
+      </div>
+      <div class="seg-cell" role="listitem">
+        <svg class="seg-cell__icon" width="28" height="28" fill="none" viewBox="0 0 28 28" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 20c0-5 10-5 10-10a5 5 0 00-10 0"/><path d="M14 10c0 5 10 5 10 10"/><line x1="4" y1="24" x2="24" y2="24" stroke-linecap="round"/></svg>
+        <div class="seg-cell__title">Médico de Expedición</div>
+        <div class="seg-cell__text">Presente en todas las rutas técnicas. Protocolo de evacuación coordinado con Defensa Civil.</div>
+      </div>
+    </div>
+    <div class="seg-proto-row reveal d2" role="list">
+      <div class="seg-proto" role="listitem"><span class="seg-proto__dot" aria-hidden="true"></span><div><span class="seg-proto__label">Ratio guía / grupo</span><span class="seg-proto__text">Máximo 1:4 en terreno técnico. Sin excepciones en condiciones adversas.</span></div></div>
+      <div class="seg-proto" role="listitem"><span class="seg-proto__dot" aria-hidden="true"></span><div><span class="seg-proto__label">Briefing pre-expedición</span><span class="seg-proto__text">Revisión obligatoria del plan de ruta, condiciones meteorológicas y distribución de roles de emergencia.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EQUIPO — CARRUSEL ──────────────────────────────── -->
+<section class="equipo" id="equipo" aria-labelledby="h-equipo">
+  <div class="container">
+    <div class="equipo__header">
+      <p class="eyebrow reveal">Profesionales en Ambientes Extremos</p>
+      <h2 class="equipo__title reveal d1" id="h-equipo">El equipo que te prepara.</h2>
+      <p class="equipo__sub reveal d2">Instructores certificados con experiencia real en rescate, primeros auxilios y expediciones de alta montaña en Patagonia.</p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="teamTrack">
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=400&q=80&auto=format&fit=crop&crop=face" alt="Martín Álvarez" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Martín Álvarez</div><div class="team-card__role">Instructor Jefe</div><div class="team-card__certs"><span class="team-card__cert">UIAGM</span><span class="team-card__cert">Rescatista</span><span class="team-card__cert">WFR</span></div></div></article>
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80&auto=format&fit=crop&crop=face" alt="Sofía González" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Sofía González</div><div class="team-card__role">Instructora</div><div class="team-card__certs"><span class="team-card__cert">Guía de Montaña</span><span class="team-card__cert">WFR</span></div></div></article>
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Ignacio Rodríguez" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Ignacio Rodríguez</div><div class="team-card__role">Especialista Hielo</div><div class="team-card__certs"><span class="team-card__cert">Hielo</span><span class="team-card__cert">Avalanchas</span></div></div></article>
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80&auto=format&fit=crop&crop=face" alt="Laura Méndez" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Laura Méndez</div><div class="team-card__role">Médica de Expedición</div><div class="team-card__certs"><span class="team-card__cert">Médica</span><span class="team-card__cert">WFR</span><span class="team-card__cert">AHA</span></div></div></article>
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&q=80&auto=format&fit=crop&crop=face" alt="Diego Vargas" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Diego Vargas</div><div class="team-card__role">Instructor Técnico</div><div class="team-card__certs"><span class="team-card__cert">IFMGA</span><span class="team-card__cert">Rescate</span></div></div></article>
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop&crop=face" alt="Pablo Herrera" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Pablo Herrera</div><div class="team-card__role">Guía Senior</div><div class="team-card__certs"><span class="team-card__cert">30 cumbres</span><span class="team-card__cert">WFR</span></div></div></article>
+
+        <article class="team-card"><div class="team-card__img"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&q=80&auto=format&fit=crop&crop=face" alt="Ana Peralta" loading="lazy"/><div class="team-card__img-ov" aria-hidden="true"></div></div><div class="team-card__body"><div class="team-card__name">Ana Peralta</div><div class="team-card__role">Psicología de Montaña</div><div class="team-card__certs"><span class="team-card__cert">Psicóloga</span><span class="team-card__cert">Alto Rend.</span></div></div></article>
+
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <div class="carousel-dots" id="teamDots" role="tablist" aria-label="Equipo"></div>
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="teamPrev" aria-label="Anterior"><svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel-btn" id="teamNext" aria-label="Siguiente"><svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ESCUELA DE GUÍAS ───────────────────────────────── -->
+<section class="escuela" id="escuela" aria-labelledby="h-escuela">
+  <div class="escuela__bg">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=80&auto=format&fit=crop" alt="" loading="lazy" aria-hidden="true"/>
+    <div class="escuela__bg-ov" aria-hidden="true"></div>
+  </div>
+  <div class="container">
+    <div class="escuela__inner">
+      <div class="reveal">
+        <p class="escuela__tag">Próximamente</p>
+        <h2 class="escuela__title" id="h-escuela">Escuela<br/>de Guías</h2>
+        <div class="escuela__year-block">
+          <span class="escuela__year">2027</span>
+        </div>
+        <p class="escuela__desc">El programa de formación profesional más exigente de la Patagonia. Para quienes ya llegaron a la cima y quieren llevar a otros. Selección por evaluación. Veinte plazas por cohorte. No hay lista de espera — hay preparación.</p>
+        <div class="escuela__urgency">Inscripciones abren enero 2027 — Cupos agotados en ediciones anteriores</div>
+      </div>
+      <div class="cert-list reveal d2" role="list">
+        <div class="cert-item" role="listitem"><span class="cert-code">GR-01</span><svg class="cert-icon" width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.3"><path d="M2 14L6 6l4 4 4-8"/></svg><span class="cert-name">Rescate en grietas glaciares</span><svg class="cert-arrow" width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="cert-item" role="listitem"><span class="cert-code">PA-02</span><svg class="cert-icon" width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.3"><rect x="4" y="7" width="8" height="7" rx="1"/><path d="M8 3v4M6 10h4" stroke-linecap="round"/></svg><span class="cert-name">Primeros auxilios avanzados WFR</span><svg class="cert-arrow" width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="cert-item" role="listitem"><span class="cert-code">RM-03</span><svg class="cert-icon" width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.3"><path d="M8 2L14 5.5v5L8 14l-6-3.5v-5Z"/></svg><span class="cert-name">Gestión de riesgo en montaña</span><svg class="cert-arrow" width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="cert-item" role="listitem"><span class="cert-code">LD-04</span><svg class="cert-icon" width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="5" r="3"/><path d="M2 14c0-4 12-4 12 0"/></svg><span class="cert-name">Liderazgo de expediciones</span><svg class="cert-arrow" width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        <div class="cert-item" role="listitem"><span class="cert-code">MT-05</span><svg class="cert-icon" width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.3"><path d="M2 13L6 5l4 4 4-8"/><circle cx="14" cy="2" r="1.5" fill="currentColor" stroke="none"/></svg><span class="cert-name">Meteorología de montaña avanzada</span><svg class="cert-arrow" width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA — máximo impacto ────────────────────── -->
+<section class="final" id="cta" aria-labelledby="h-cta">
+  <div class="final__bg-img" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=80&auto=format&fit=crop" alt="" loading="lazy"/>
+  </div>
+  <div class="final__ov" aria-hidden="true"></div>
+  <div class="final__side" aria-hidden="true">
+    <div class="final__side-stat">
+      <span class="final__side-num">3.491</span>
+      <span class="final__side-label">METROS — CERRO TRONADOR</span>
+    </div>
+  </div>
+  <div class="container">
+    <div class="final__content">
+      <p class="final__kicker reveal">Postulación</p>
+      <h2 class="final__title reveal d1" id="h-cta">¿Estás<br/>preparado para<br/><em>la Patagonia?</em></h2>
+      <p class="final__sub reveal d2">El proceso de admisión incluye evaluación física, entrevista técnica y análisis de motivación. Las plazas son limitadas por diseño. No todos ingresan.</p>
+      <div class="final__actions reveal d3">
+        <a href="#" class="btn-primary">
+          Iniciar postulación
+          <svg width="15" height="15" fill="none" viewBox="0 0 15 15" aria-hidden="true"><path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#metodo" class="btn-outline">Ver el método</a>
+      </div>
+      <p class="final__note reveal d4">CUPOS LIMITADOS — ADMISIÓN POR EVALUACIÓN — 2025</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="#" class="footer__logo">CÚSPIDES<span>.</span></a>
+      <nav class="footer__nav"><a href="#metodo">Método</a><a href="#formacion">Cursos</a><a href="#expediciones">Expediciones</a><a href="#equipo">Equipo</a><a href="#escuela">Escuela de Guías</a></nav>
+      <p class="footer__copy mono">© 2025 CÚSPIDES ACADEMIA DE MONTAÑA</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
